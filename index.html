@@ -1,49 +1,108 @@
+<!DOCTYPE html>
 <html>
- <head>
-  <style>
-   #tab:hover{
-    bordercolor:orangered;
-    background-color:orangered;
-   }
-   #tab{
-    border: 5px;
-    border-color: white;
-   }
-   body{
-    background-color: black;
-   }
-   a:hover{
-    color:white;
-   }
-   a{
-    text-decoration:none;
-    color: orangered;
-   }
-  </style>
- </head>
- <body>
-<h1>
- <img src="LOGO.jpg" align = "center">
- <br>
- <center>
- <img src="poster1_a4.jpg" height="660px" width="480px">
- <img src="ad_poster_a4.jpg" height="660px" width="480px">
- </center>
-<p>
- <center>
- <font face="Arial">
-  <table style="border:5px; border-color:white;">
-   <th>
-<Tr> <a href="vid.html">Promotional Video</a><tr>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: orangered;;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
 
- <tr><a href="code.html">Exoplanet Simulator Code</a></tr>
- 
- <tr> <a href="powerpoints.html">Powerpoint Presentations</a></tr>
- </th>
-   </table>
- </font>
+.dropbtn:hover, .dropbtn:focus {
+  background-color: white;
+ color:orangered;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: orangered;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: white; color:orangered;}
+
+.show {display: block;}
+</style>
+</head>
+<body>
+ <img src="LOGO.jpg" width="100%">
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Links</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <a href="index.html">Home</a>
+    <a href="vid.html">Promotional Video</a>
+    <a href="powerpoints.html">PPTs</a>
+    <a href="code.html">Simulator Code</a>
+    <a href="#custom">Custom</a>
+    <a href="#support">Support</a>
+    <a href="#tools">Tools</a>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+<section>
+ <center>
+  <img src="ad_poster_a4.jpg" height="660px" width="480px">
+  <img src="poster1_a4.jpg" height="660px" width="480px">
  </center>
-</p>
- </body>
+ 
+ </section>
+</body>
 </html>
 
