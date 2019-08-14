@@ -1,25 +1,118 @@
 <html>
-  <head>
-    <style>
-    h1{
-      text-decoration: underline;
-      color: orangered;
-      font-size:40px;
-      }
-      a:hover{
-        color:white;
-      }
-      a{
-      text-decoration:none;
-      color: orangered;
-        font-size: 25px;
-      }
-    </style>
-  </head>
-  <body bgcolor="black">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{
+    background-color:black;
+  }
+  input{
+    color: orangered;}
+.dropbtn {
+  background-color: orangered;;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-face: arial;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: white;
+  font-face: arial;
+ color:orangered;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background: url('https://www.w3schools.com/howto/searchicon.png');
+  background-position: 14px 12px;
+  background-color: white;
+  color:orangered;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid white;
+  font-face: arial;
+}
+
+#myInput:focus {outline: 3px solid orangered;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: orangered;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+  font-face: arial;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-face: arial;
+  display: block;
+}
+
+.dropdown a:hover {background-color: white; color:orangered; font-face: arial;}
+
+.show {display: block;}
+  button{
+    margin-left:30px;
+  }
+</style>
+</head>
+<body>
+ <img src="LOGO.jpg" width="100%">
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Links to Material</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <a href="index.html">Home</a>
+    <a href="vid.html">Promotional Video</a>
+    <a href="powerpoints.html">PPTs</a>
+    <a href="code.html">Simulator Code</a>
+    <a href="articles.html">Articles</a>
+    
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+   
     <center>
       <img src="LOGO.jpg" align = "center">
-  <font face="arial" size="20px">
+  <font face="arial" size="20px" color="orangered">
  <h1>
     Download Links for PPTs
    </h1></font>
